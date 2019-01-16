@@ -1,13 +1,12 @@
 /**
  * @function 点击当前区块元素外部关闭当前区块元素
- * @type {{bind(*, *, *): void, update(), unbind(*, *): void}}
  * @example
  *  <template>
  *      <div class="box" v-if="flag">
  *          <div v-clickOutsideToClose="hideBox">点击我的外部可以关闭box</div>
  *      </div>
  *  </template>
- *  import {clickOutsideToClose} from '@/Common-JS-Library/encryption-and-decryption/click-outside-to-close.js'
+ *  import {clickOutsideToClose} from '@/Common-JS-Library/vue-directives/click-outside-to-close.js'
  *  export default {
  *      data () {
  *          return {
@@ -48,6 +47,7 @@ export const clickOutsideToClose = {
     // 所在组件的 VNode 更新时调用，但是可能发生在其子 VNode 更新之前。
     // 指令的值可能发生了改变，也可能没有。但是你可以通过比较更新前后的值来忽略不必要的模板更新
     update () {
+
     },
     // 指令所在组件的 VNode 及其子 VNode 全部更新后调用。
     componentUpdated () {
