@@ -8,5 +8,5 @@ function getParam (paramName) {
     var hashResult =  window.location.hash.substr(2)
     var result = searchResult || hashResult
     var reg = new RegExp("(^|&)" + paramName + "=([^&]*)(&|$)", "i")
-    return result.match(reg) !== null ? unescape(result.match(reg)[2]) : null
+    return result.match(reg) !== null ? decodeURI(result.match(reg)[2]) : null
 }
