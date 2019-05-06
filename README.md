@@ -14,6 +14,7 @@
 	
 * [Form表单验证常用方法](/Native-JavaScript/form-validator.js)
 * [获取url的参数值，兼容search和hash](/Native-JavaScript/url-param.js)
+* [原生ajax封装](/Native-JavaScript/ajax.js)
 
 > Vue
 * <details>
