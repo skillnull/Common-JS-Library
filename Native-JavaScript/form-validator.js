@@ -54,3 +54,21 @@ export function verifyPassword (str) {
     let RegExp = /((?=.*[a-z])(?=.*\d)|(?=.*[a-z])(?=.*[~!@#$%^&*.,])|(?=.*\d)(?=.*[~!@#$%^&*.,]))[a-z\d~!@#$%^&*.,]{6,12}/i
     return RegExp.test(str)
 }
+
+// 仅允许输入正整数
+export function positiveInteger (_this) {
+    if (_this.value.length === 1) {
+        _this.value = _this.value.replace(/[^1-9]/g, '')
+    } else {
+        _this.value = _this.value.replace(/\D/g, '')
+    }
+}
+
+// 仅允许输入负整数
+export function negativeInteger (_this) {
+    if (_this.value.length === 1) {
+        _this.value = _this.value.replace(/[^\-]/g, '-')
+    } else {
+        _this.value = _this.value.replace(/[^\d-]/g, '')
+    }
+}
