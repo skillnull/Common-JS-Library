@@ -17,6 +17,7 @@
 * [原生ajax封装](/Native-JavaScript/ajax.js)
 * [Json数据处理](/Native-JavaScript/json-handler.js)
 * [数据格式化处理](/Native-JavaScript/data-handler.js)
+* [数据类型处理](/Native-JavaScript/data-type-handler.js)
 
 > Vue
 * <details>
