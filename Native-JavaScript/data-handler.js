@@ -21,3 +21,172 @@ function thousandsFormateTofixed (number, digit, showZero) {
     }
     return result
 }
+
+/**
+ * 递归遍历数组对象，将结果去重
+ * @returns {*}
+ */
+var getAllType = function () {
+    var typeArr = []
+    var getType = function (list) {
+        list.forEach(function (item) {
+            typeArr.push(item)
+            if (item.child && item.child.length > 0) {
+                getType(item.child)
+            } else {
+                typeArr.push(item)
+            }
+        })
+    }
+    getType([
+        {
+            name: '栏位类型',
+            key: 'adslot_type',
+            tendency: true,
+            child: [
+                {
+                    name: '栏位',
+                    key: 'adslot_id',
+                    tendency: true,
+                    child: [
+                        {
+                            name: '代理',
+                            key: 'belong',
+                            tendency: true,
+                            child: [
+                                {
+                                    name: '广告主',
+                                    key: 'user_id',
+                                    tendency: true,
+                                    child: [
+                                        {
+                                            name: '单元',
+                                            key: 'unit_id',
+                                            tendency: true
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    name: '行业',
+                    key: 'category',
+                    tendency: true,
+                    child: [
+                        {
+                            name: '代理',
+                            key: 'belong',
+                            tendency: true,
+                            child: [
+                                {
+                                    name: '广告主',
+                                    key: 'user_id',
+                                    tendency: true,
+                                    child: [
+                                        {
+                                            name: '单元',
+                                            key: 'unit_id',
+                                            tendency: true
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    name: '代理',
+                    key: 'belong',
+                    tendency: true,
+                    child: {
+                        name: '广告主',
+                        key: 'user_id',
+                        tendency: true,
+                        child: [
+                            {
+                                name: '单元',
+                                key: 'unit_id',
+                                tendency: true
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            name: '代理商',
+            key: 'belong',
+            tendency: true,
+            child: [
+                {
+                    name: '广告主',
+                    key: 'user_id',
+                    tendency: true,
+                    child: [
+                        {
+                            name: '单元',
+                            key: 'unit_id',
+                            tendency: true
+                        }
+                    ]
+                },
+                {
+                    name: '行业',
+                    key: 'category',
+                    tendency: true,
+                    child: {
+                        name: '代理',
+                        key: 'belong',
+                        tendency: true,
+                        child: [
+                            {
+                                name: '广告主',
+                                key: 'user_id',
+                                tendency: true,
+                                child: [
+                                    {
+                                        name: '单元',
+                                        key: 'unit_id',
+                                        tendency: true
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    name: '栏位类型',
+                    key: 'adslot_type',
+                    tendency: true,
+                    child: {
+                        name: '代理',
+                        key: 'belong',
+                        tendency: true,
+                        child: [
+                            {
+                                name: '广告主',
+                                key: 'user_id',
+                                tendency: true,
+                                child: [
+                                    {
+                                        name: '单元',
+                                        key: 'unit_id',
+                                        tendency: true
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ])
+    var obj = {}
+    var result = typeArr.reduce(function (item, next) {
+        obj[next.key] ? '' : obj[next.key] = true && item.push(next)
+        return item
+    }, [])
+    return result
+}
