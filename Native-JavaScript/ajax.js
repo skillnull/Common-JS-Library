@@ -49,12 +49,12 @@ function ajaxRequest (data, callback) {
  * @param requestUrl 请求接口地址
  * @param async 是否异步请求
  * @param callBack 回调函数
- * @param contetntType 请求类型
+ * @param contentType 请求类型
  */
-function ajaxGetData (ajaxName, requestUrl, async, callBack, contetntType) {
+function ajaxGetData (ajaxName, requestUrl, async, callBack, contentType) {
     ajaxRequest({
         ajaxName: ajaxName,
-        contentType: contetntType || "application/json;charset=utf-8",
+        contentType: contentType || "application/json;charset=utf-8",
         method: "GET",
         url: requestUrl,
         async: async,
@@ -88,11 +88,11 @@ function formateGetUrl (url, params) {
  * @param requestUrl 请求接口地址
  * @param async 是否异步请求
  * @param callBack 回调函数
- * @param contetntType 请求类型
+ * @param contentType 请求类型
  */
-function ajaxPostData (ajaxName, requestUrl, params, async, callBack, contetntType) {
+function ajaxPostData (ajaxName, requestUrl, params, async, callBack, contentType) {
     var resultParams = ''
-    if (!contetntType || contetntType === "application/x-www-form-urlencoded;charset=utf-8") {
+    if (!contentType || contentType === "application/x-www-form-urlencoded;charset=utf-8") {
         for (var key in params) {
             resultParams = resultParams + '&' + key + '=' + encodeURIComponent(params[key])
         }
@@ -102,7 +102,7 @@ function ajaxPostData (ajaxName, requestUrl, params, async, callBack, contetntTy
     ajaxRequest({
         ajaxName: ajaxName,
         headers: {},
-        contentType: contetntType || "application/x-www-form-urlencoded;charset=utf-8",
+        contentType: contentType || "application/x-www-form-urlencoded;charset=utf-8",
         method: "POST",
         dataType: "json",
         url: requestUrl,
