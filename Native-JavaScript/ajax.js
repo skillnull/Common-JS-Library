@@ -45,10 +45,11 @@ function ajaxRequest (data, callback) {
 
 /**
  * GET
- * @param ajaxName
- * @param requestUrl
- * @param async
- * @param callBack
+ * @param ajaxName 请求名称
+ * @param requestUrl 请求接口地址
+ * @param async 是否异步请求
+ * @param callBack 回调函数
+ * @param contetntType 请求类型
  */
 function ajaxGetData (ajaxName, requestUrl, async, callBack, contetntType) {
     ajaxRequest({
@@ -83,10 +84,11 @@ function formateGetUrl (url, params) {
 
 /**
  * POST
- * @param ajaxName
- * @param requestUrl
- * @param async
- * @param callBack
+ * @param ajaxName 请求名称
+ * @param requestUrl 请求接口地址
+ * @param async 是否异步请求
+ * @param callBack 回调函数
+ * @param contetntType 请求类型
  */
 function ajaxPostData (ajaxName, requestUrl, params, async, callBack, contetntType) {
     var resultParams = ''
