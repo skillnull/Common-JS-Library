@@ -190,3 +190,28 @@ var getAllType = function () {
     }, [])
     return result
 }
+
+
+/**
+ * 数字单位格式化
+ * @param number
+ */
+function formatterNumberUnit (number) {
+    var result = ''
+    if (number >= 100000000) {
+        result = thousandsFormateTofixed(number / 100000000, 2, false) + '亿'
+    } else if (100000000 > number && number >= 10000000) {
+        result = thousandsFormateTofixed(number / 10000000, 2, false) + '千万'
+    } else if (10000000 > number && number >= 1000000) {
+        result = thousandsFormateTofixed(number / 1000000, 2, false) + '百万'
+    } else if (1000000 > number && number >= 100000) {
+        result = thousandsFormateTofixed(number / 100000, 2, false) + '十万'
+    } else if (100000 > number && number >= 10000) {
+        result = thousandsFormateTofixed(number / 10000, 2, false) + '万'
+    } else if (10000 > number && number >= 1000) {
+        result = thousandsFormateTofixed(number, 2, false)
+    } else {
+        result = number
+    }
+    return result
+}
