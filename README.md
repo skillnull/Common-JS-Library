@@ -19,6 +19,7 @@
 * [数据格式化处理](/Native-JavaScript/data-handle.js)
 * [数据类型处理](/Native-JavaScript/data-type-handle.js)
 * [滚动条处理](/Native-JavaScript/scroll-handle.js)
+* [监听DOM变化](/Native-JavaScript/monitor-dom-change.js)
 
 > Vue
 * <details>
