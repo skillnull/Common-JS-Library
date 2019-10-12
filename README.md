@@ -12,13 +12,43 @@
     - [base64](/Native-JavaScript/encryption-decryption/base64.js)	
   </details>
 	
-* [Form表单验证常用方法](/Native-JavaScript/form-validator.js)
+* <details>
+  	<summary>Form表单验证常用方法</summary>
+	
+    - [验证邮箱](/Native-JavaScript/form-validator.js)	
+    - [验证手机号](/Native-JavaScript/form-validator.js)	
+    - [去除字符串前后空格](/Native-JavaScript/form-validator.js)	
+    - [去除字符串所有空格](/Native-JavaScript/form-validator.js)	
+    - [图片的预加载](/Native-JavaScript/form-validator.js)	
+    - [验证密码，密码为6-12位字母数字或符号最少两种组合,特殊符号为 ~!@#$%^&*.,](/Native-JavaScript/form-validator.js)	
+    - [仅允许输入正整数](/Native-JavaScript/form-validator.js)	
+    - [仅允许输入负整数](/Native-JavaScript/form-validator.js)	
+  </details>
+  
+* <details>
+  	<summary>Json数据处理</summary>
+	
+    - [Json字符串格式化](/Native-JavaScript/json-handle.js)
+  </details>
+  
+* <details>
+  	<summary>数据格式化处理</summary>
+	
+    - [保留小数并千分位格式化](/Native-JavaScript/data-handle.js)
+    - [递归遍历数组对象，将结果去重](/Native-JavaScript/data-handle.js)
+    - [数字单位格式化](/Native-JavaScript/data-handle.js)
+  </details>
+  
+* <details>
+  	<summary>数据类型处理</summary>
+	
+    - [合并两个函数](/Native-JavaScript/data-type-handle.js)
+    - [深度比较两个对象是否相等](/Native-JavaScript/data-type-handle.js)
+  </details>
+  
+* [滚动条处理](/Native-JavaScript/scroll-handle.js)
 * [获取url的参数值，兼容search和hash](/Native-JavaScript/url-param.js)
 * [原生ajax封装](/Native-JavaScript/ajax.js)
-* [Json数据处理](/Native-JavaScript/json-handle.js)
-* [数据格式化处理](/Native-JavaScript/data-handle.js)
-* [数据类型处理](/Native-JavaScript/data-type-handle.js)
-* [滚动条处理](/Native-JavaScript/scroll-handle.js)
 
 > Vue
 * <details>
