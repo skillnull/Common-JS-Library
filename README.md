@@ -50,7 +50,7 @@
 * [获取url的参数值，兼容search和hash](/Native-JavaScript/url-param.js)
 * [原生ajax封装](/Native-JavaScript/ajax.js)
 
-> Vue
+> Vue 2
 * <details>
      <summary>Vue指令</summary>
      
