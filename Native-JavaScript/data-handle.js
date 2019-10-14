@@ -191,7 +191,6 @@ var getAllType = function () {
     return result
 }
 
-
 /**
  * 数字单位格式化
  * @param number
@@ -208,4 +207,19 @@ function formatterNumberUnit (number) {
         result = number
     }
     return result
+}
+
+/**
+ * 获取对象长度
+ * @param obj
+ * @returns {number}
+ */
+function getObjectLength (obj) {
+    var count = 0
+    for (var i in obj) {
+        if (obj.hasOwnProperty(i)) {
+            count++
+        }
+    }
+    return count
 }
