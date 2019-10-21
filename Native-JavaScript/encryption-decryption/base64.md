@@ -1,4 +1,5 @@
-###### abse64
+###### Base64
+
 ````js
 /**
  * @function decode encode base64 string

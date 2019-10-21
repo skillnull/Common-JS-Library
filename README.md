@@ -9,7 +9,7 @@
 * <details>
   	<summary>加密解密</summary>
 	
-    - [base64](/Native-JavaScript/encryption-decryption/base64.md#abse64)	
+    - [Base64](/Native-JavaScript/encryption-decryption/base64.md#Base64)	
   </details>
 	
 * <details>
