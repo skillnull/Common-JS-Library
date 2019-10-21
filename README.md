@@ -15,14 +15,14 @@
 * <details>
   	<summary>Form表单验证常用方法</summary>
 	
-    - [验证邮箱](/Native-JavaScript/form-validator.js)	
-    - [验证手机号](/Native-JavaScript/form-validator.js)	
-    - [去除字符串前后空格](/Native-JavaScript/form-validator.js)	
-    - [去除字符串所有空格](/Native-JavaScript/form-validator.js)	
-    - [图片的预加载](/Native-JavaScript/form-validator.js)	
-    - [验证密码，密码为6-12位字母数字或符号最少两种组合,特殊符号为 ~!@#$%^&*.,](/Native-JavaScript/form-validator.js)	
-    - [仅允许输入正整数](/Native-JavaScript/form-validator.js)	
-    - [仅允许输入负整数](/Native-JavaScript/form-validator.js)	
+    - [验证邮箱](/Native-JavaScript/form-validator.md#验证邮箱)	
+    - [验证手机号](/Native-JavaScript/form-validator.md#验证手机号)	
+    - [去除字符串前后空格](/Native-JavaScript/form-validator.md#去除字符串前后空格)	
+    - [去除字符串所有空格](/Native-JavaScript/form-validator.md#去除字符串所有空格)	
+    - [图片的预加载](/Native-JavaScript/form-validator.md#图片的预加载)	
+    - [验证密码，密码为6-12位字母数字或符号最少两种组合,特殊符号为 ~!@#$%^&*.,](/Native-JavaScript/form-validator.md#验证密码，密码为6-12位字母数字或符号最少两种组合)	
+    - [仅允许输入正整数](/Native-JavaScript/form-validator.md#仅允许输入正整数)	
+    - [仅允许输入负整数](/Native-JavaScript/form-validator.md#仅允许输入负整数)	
   </details>
   
 * <details>
