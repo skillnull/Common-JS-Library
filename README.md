@@ -64,7 +64,7 @@
      <summary>Vue指令</summary>
      
 	 - [点击元素外部关闭元素](/Vue/vue-directives/click-outside-to-close.md#点击当前区块元素外部关闭当前区块元素)
-	 - [图片懒加载](/Vue/vue-directives/lazy-load-image.md#使用交叉观察器(intersectionObserver)进行图片懒加载)
+	 - [图片懒加载](/Vue/vue-directives/lazy-load-image.md#使用交叉观察器进行图片懒加载)
  </details>
 
 * <details>

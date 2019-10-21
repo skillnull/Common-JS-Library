@@ -1,4 +1,5 @@
-###### 使用交叉观察器(intersectionObserver)进行图片懒加载
+###### 使用交叉观察器进行图片懒加载
+
 ````js
 /**
  * @function 使用交叉观察器(intersectionObserver)进行图片懒加载
