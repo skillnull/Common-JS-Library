@@ -1,3 +1,5 @@
+###### 保留小数并千分位格式化
+````js
 /**
  * 保留小数并千分位格式化
  * @param number
@@ -21,7 +23,10 @@ function thousandsFormateTofixed (number, digit, showZero) {
     }
     return result
 }
+````
 
+###### 递归遍历数组对象，将结果去重
+````js
 /**
  * 递归遍历数组对象，将结果去重
  * @returns {*}
@@ -190,7 +195,10 @@ var getAllType = function () {
     }, [])
     return result
 }
+````
 
+###### 数字单位格式化
+````js
 /**
  * 数字单位格式化
  * @param number
@@ -208,7 +216,10 @@ function formatterNumberUnit (number) {
     }
     return result
 }
+````
 
+###### 获取对象长度
+````js
 /**
  * 获取对象长度
  * @param obj
@@ -223,3 +234,4 @@ function getObjectLength (obj) {
     }
     return count
 }
+````

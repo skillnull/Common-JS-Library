@@ -1,3 +1,5 @@
+###### 使用交叉观察器(intersectionObserver)进行图片懒加载
+````js
 /**
  * @function 使用交叉观察器(intersectionObserver)进行图片懒加载
  * @see https://developer.mozilla.org/zh-CN/docs/Web/API/IntersectionObserver
@@ -45,3 +47,4 @@ export const layzLoadImg = {
 
     }
 }
+````

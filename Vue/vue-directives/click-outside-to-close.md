@@ -1,3 +1,5 @@
+###### 点击当前区块元素外部关闭当前区块元素
+````js
 /**
  * @function 点击当前区块元素外部关闭当前区块元素
  * @example
@@ -59,4 +61,4 @@ export const clickOutsideToClose = {
         delete el.__vueClickOutsideClose__
     }
 }
-
+````

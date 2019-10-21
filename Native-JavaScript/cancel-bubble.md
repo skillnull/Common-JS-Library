@@ -1,3 +1,5 @@
+###### 传入event则阻止冒泡
+````js
 /**
  * 可以传入event则阻止冒泡，不传不阻止
  * @param event
@@ -10,3 +12,4 @@ function someClick (event) {
     }
     // TODO 需要阻止冒泡的事件
 }
+````

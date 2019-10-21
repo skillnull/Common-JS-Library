@@ -1,4 +1,5 @@
-// 滚动条位置处理
+###### 滚动条位置处理
+````js
 var scrollPosition = {
     // 位置
     result: 0,
@@ -21,3 +22,4 @@ var scrollPosition = {
         window.scrollTo(document.body.scrollWidth, scrollPosition.result)
     }
 }
+````
