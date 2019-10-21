@@ -1,3 +1,5 @@
+###### ajax request
+````js
 /**
  * @function ajax request
  * @fields ajaxName:请求名称，method：请求方法，headers:setRequestHeader自定义部分,url：接口地址，async：是否异步请求，withCredentials：是否支持跨域发送cookie，dataType:数据类型 ,data：post请求参数
@@ -115,3 +117,4 @@ function ajaxPostData (ajaxName, requestUrl, params, async, callBack, contentTyp
         }
     })
 }
+````

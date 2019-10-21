@@ -1,3 +1,6 @@
+###### 时间格式化
+
+````js
 const REGEX = /(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})/
 /**
  * @function format time
@@ -46,3 +49,4 @@ export const formatTime = (val, format) => {
         return '--'
     }
 }
+````

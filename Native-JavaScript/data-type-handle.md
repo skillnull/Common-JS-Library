@@ -1,3 +1,5 @@
+###### 合并两个函数
+````js
 /**
  * 合并两个函数
  * @param functionA 先执行
@@ -13,7 +15,10 @@ function mergeFunction (functionA, functionB) {
     })()
     return functionB = merge
 }
+````
 
+###### 深度比较两个对象是否相等
+````js
 /**
  * 深度比较两个对象是否相等
  * @type {{compare: compareObj.compare, isObject: (function(*=): boolean), isArray: (function(*=): boolean)}}
@@ -58,3 +63,4 @@ var compareObj = {
         return Object.prototype.toString.call(arr) === '[object Array]'
     }
 }
+````

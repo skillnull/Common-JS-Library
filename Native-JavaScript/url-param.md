@@ -1,3 +1,5 @@
+###### 获取hash或者search参数值
+````js
 /**
  * 获取hash或者search参数值
  * @param paramName
@@ -10,3 +12,4 @@ function getParam (paramName) {
     var reg = new RegExp("(^|&)" + paramName + "=([^&]*)(&|$)", "i")
     return result.match(reg) !== null ? decodeURI(result.match(reg)[2]) : null
 }
+````

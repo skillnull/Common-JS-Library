@@ -1,3 +1,5 @@
+###### abse64
+````js
 /**
  * @function decode encode base64 string
  * @constructor Base64Function
@@ -97,3 +99,4 @@ function Base64Function () {
 
 const Base64 = new Base64Function()
 export default {encode: Base64.encode, decode: Base64.decode}
+````
