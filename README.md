@@ -56,7 +56,7 @@
   
 * [滚动条处理](/Native-JavaScript/scroll-handle.md#滚动条位置处理)
 * [获取url的参数值，兼容search和hash](/Native-JavaScript/url-param.md#获取hash或者search参数值)
-* [原生ajax封装](/Native-JavaScript/ajax.md#ajax request)
+* [原生ajax封装](/Native-JavaScript/ajax.md#原生ajax封装)
 * [传入event则阻止冒泡](/Native-JavaScript/cancel-bubble.md#传入event则阻止冒泡)
 
 > Vue 2

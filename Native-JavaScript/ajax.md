@@ -1,4 +1,4 @@
-###### ajax request
+###### 原生ajax封装
 ````js
 /**
  * @function ajax request
