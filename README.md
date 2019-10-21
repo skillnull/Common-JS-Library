@@ -47,9 +47,16 @@
     - [深度比较两个对象是否相等](/Native-JavaScript/data-type-handle.js)
   </details>
   
+* <details>
+  	<summary>DOM相关处理</summary>
+	
+    - [监听浏览器标签页的显示与隐藏](/Native-JavaScript/dom-handle.js)
+  </details>
+  
 * [滚动条处理](/Native-JavaScript/scroll-handle.js)
 * [获取url的参数值，兼容search和hash](/Native-JavaScript/url-param.js)
 * [原生ajax封装](/Native-JavaScript/ajax.js)
+
 
 > Vue 2
 * <details>
