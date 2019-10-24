@@ -54,6 +54,12 @@
     - [监听dom变化](/Native-JavaScript/dom-handle.md#监听dom变化)
   </details>
   
+* <details>
+  	<summary>时间相关处理</summary>
+	
+    - [比较两个时间的时间差](/Native-JavaScript/time-handle.md#比较两个时间的时间差)
+  </details>
+
 * [滚动条处理](/Native-JavaScript/scroll-handle.md#滚动条位置处理)
 * [获取url的参数值，兼容search和hash](/Native-JavaScript/url-param.md#获取hash或者search参数值)
 * [原生ajax封装](/Native-JavaScript/ajax.md#原生ajax封装)
