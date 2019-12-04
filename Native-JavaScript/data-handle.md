@@ -235,3 +235,26 @@ function getObjectLength (obj) {
     return count
 }
 ````
+
+###### HTML实体编码转换
+````js
+/**
+ * HTML实体编码转换
+ * @param string
+ * @returns {string}
+ */
+function escapeHtml(string) {
+    var entityMap = {
+        "&": "&amp;",
+        "<": "&#60;",
+        ">": "&#62;",
+        '"': '&#34;',
+        "'": '&#39;',
+        "/": '&#x2F;',
+        " ": '&#160;'
+    };
+    return String(string).replace(/[&<>"'\/ ]/g, function (s) {
+        return entityMap[s]
+    })
+}
+````
