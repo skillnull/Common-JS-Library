@@ -32,6 +32,12 @@
   </details>
   
 * <details>
+  	<summary>文件上传</summary>
+	
+    - [图片上传](/Native-JavaScript/file-upload.md#图片上传)
+  </details>  
+  
+* <details>
   	<summary>数据格式化处理</summary>
 	
     - [保留小数并千分位格式化](/Native-JavaScript/data-handle.md#保留小数并千分位格式化)
