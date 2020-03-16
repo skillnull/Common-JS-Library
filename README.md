@@ -44,6 +44,7 @@
     - [数字单位格式化](/Native-JavaScript/data-handle.md#数字单位格式化)
     - [获取对象长度](/Native-JavaScript/data-handle.md#获取对象长度)
     - [HTML实体编码转换](/Native-JavaScript/data-handle.md#HTML实体编码转换)
+    - [数组拉平](/Native-JavaScript/flatten.md#数组拉平)
   </details>
   
 * <details>
