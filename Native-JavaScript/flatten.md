@@ -10,7 +10,7 @@ export function flatten (list = [], result = []) {
         result.push(item)
       }
     }
-    if (item.children && item.children.length > 0) {
+    if (item && item.children && item.children.length > 0) {
       flatten(item.children, result)
     }
   })
