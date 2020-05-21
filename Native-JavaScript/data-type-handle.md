@@ -17,6 +17,38 @@ function mergeFunction (functionA, functionB) {
 }
 ````
 
+###### 深度比较两个数组是否相等
+```js
+/**
+ * 深度比较两个数组是否相等
+ * @param array1
+ * @param array2
+ * @returns {boolean}
+ */
+export function arrayEquals(array1, array2) {
+  if (!(array1 || array1)) {
+    return false
+  }
+  // 先比较长度
+  if (array1.length !== array2.length) {
+    return false
+  }
+
+  for (let i = 0, l = array1.length; i < l; i++) {
+    // 检查是否为内嵌数组
+    if (array1[i] instanceof Array && array2[i] instanceof Array) {
+      // 递归比较数组
+      if (!arrayEquals(array1[i], array2[i])) {
+        return false
+      }
+    } else if (array1[i] !== array2[i]) {
+      return false
+    }
+  }
+  return true
+}
+```
+
 ###### 深度比较两个对象是否相等
 ````js
 /**

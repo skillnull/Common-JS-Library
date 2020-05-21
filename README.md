@@ -52,6 +52,7 @@
 	
     - [合并两个函数](/Native-JavaScript/data-type-handle.md#合并两个函数)
     - [深度比较两个对象是否相等](/Native-JavaScript/data-type-handle.md#深度比较两个对象是否相等)
+    - [深度比较两个数组是否相等](/Native-JavaScript/data-type-handle.md#深度比较两个数组是否相等)
   </details>
   
 * <details>
