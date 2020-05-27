@@ -96,3 +96,27 @@ var compareObj = {
     }
 }
 ````
+
+###### 深度拷贝
+```js
+// 深度拷贝
+export function deepClone(obj) {
+  if (obj === null) return null; // null 的情况
+  if (obj instanceof RegExp) return new RegExp(obj); // 正则表达式的情况
+  if (obj instanceof Date) return new Date(obj); // 日期对象的情况
+  if (typeof obj === 'function') {
+    return new function (obj) {
+    }()
+  }
+  if (typeof obj !== 'object') {
+    // 非复杂类型,直接返回 也是结束递归的条件
+    return obj
+  }
+  // eslint-disable-next-line no-proto
+  const newObj = new obj.__proto__.constructor()
+  for (const key in obj) {
+    newObj[key] = deepClone(obj[key])
+  }
+  return newObj
+}
+```
