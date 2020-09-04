@@ -15,7 +15,7 @@ export function checkEmail (val) {
 ````js
 export function checkPhoneNumber (val) {
     val = trimSpace(val)
-    let reg = new RegExp('^(((13[0-9]{1})|(14[0-9]{1})|(17[0-9]{1})|(15[0-3]{1})|(15[4-9]{1})|(18[0-9]{1})|(199))+\\d{8})$')
+    let reg = new RegExp('^(((13[0-9]{1})|(14[0-9]{1})|(17[0-9]{1})|(15[0-9]{1})|(18[0-9]{1})|(19[0-9]{1}))+\\d{8})$')
     if (reg.test(val)) {
         return val
     } else {
