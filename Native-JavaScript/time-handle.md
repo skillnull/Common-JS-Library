@@ -64,3 +64,66 @@ function compareTime (startTime, endTime) {
 }
 
 ````
+
+###### 图表根据时间进行补点
+
+```typescript
+
+/**
+ * 图表数据补点处理
+ * @param {
+ *   data 需要处理的数据
+ *   step 数据步长
+ *   field 用于比对的字段
+ *   fill 用于填补数据的字段组合
+ *   toNow 是否只显示到当前时间
+ * }
+ */
+export const handleChartsData = ({ data = [], step = 60, field = '', fill = {}, toNow = true }: any) => {
+  let _data
+  const count = 1440 / step
+  if (data.length < count) {
+    // 根据步长生成完整的时间数组
+    let time_arr: any = []
+    for (let i = 0; i < 24; i++) {
+      for (let j = 0; j < 60 / step; j++) {
+        time_arr.push(`${i < 10 ? '0' + i : i}:${j * step < 10 ? '0' + j * step : j * step}`)
+      }
+    }
+
+    // 根据 field 进行数据填补
+    let result: any = []
+    if (field) {
+      const had_time: any = []
+      data &&
+        data.length > 0 &&
+        data.map((item: any) => {
+          had_time.push(item[field])
+        })
+      time_arr &&
+        time_arr.length > 0 &&
+        time_arr.map((item: any, index: any) => {
+          if (had_time.includes(item)) {
+            result[index] = data.filter((val: any) => {
+              return val[field] === item
+            })[0]
+          } else {
+            fill[field] = item
+            result[index] = { ...fill }
+          }
+        })
+    } else {
+      result = data
+    }
+    _data = result
+  } else {
+    _data = data
+  }
+  let now = `${new Date().getHours()}:${new Date().getMinutes()}`
+  let filter_data = _data.filter((item: any) => {
+    return item[field] <= now
+  })
+  return toNow ? filter_data : _data
+}
+
+```

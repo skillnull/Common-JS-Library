@@ -67,6 +67,7 @@
   	<summary>时间相关处理</summary>
 	
     - [比较两个时间的时间差](/Native-JavaScript/time-handle.md#比较两个时间的时间差)
+    - [图表根据时间进行补点](/Native-JavaScript/time-handle.md#图表根据时间进行补点)
   </details>
 
 * [滚动条处理](/Native-JavaScript/scroll-handle.md#滚动条位置处理)
