@@ -94,17 +94,20 @@ function monitorDomChange (callback) {
 // 滚动到低部
 export function scrollToBottom (dom) {
     const dom_box = document.querySelector(dom)
-    (function scroll () {
+
+    function scroll () {
         // 已经滚动的高度
         const currentScroll = dom_box.scrollTop
         // 容器高度
         const clientHeight = dom_box.offsetHeight
         // 内容高度
         const scrollHeight = dom_box.scrollHeight
-        if (scrollHeight - 10 > currentScroll + clientHeight) {
+        if (scrollHeight > currentScroll + clientHeight) {
             window.requestAnimationFrame(scroll)
             dom_box.scrollTo(0, currentScroll + (scrollHeight - currentScroll - clientHeight) / 2)
         }
-    })()
+    }
+
+    scroll()
 }
 ````
