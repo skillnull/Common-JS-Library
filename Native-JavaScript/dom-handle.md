@@ -102,7 +102,7 @@ export function scrollToBottom (dom) {
         const clientHeight = dom_box.offsetHeight
         // 内容高度
         const scrollHeight = dom_box.scrollHeight
-        if (scrollHeight > currentScroll + clientHeight) {
+        if (scrollHeight - 10 > currentScroll + clientHeight) {
             window.requestAnimationFrame(scroll)
             dom_box.scrollTo(0, currentScroll + (scrollHeight - currentScroll - clientHeight) / 2)
         }
