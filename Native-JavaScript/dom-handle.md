@@ -94,7 +94,7 @@ function monitorDomChange (callback) {
 // 滚动到低部
 export function scrollToBottom (dom) {
     const dom_box = document.querySelector(dom)
-
+    if (!dom_box) return
     function scroll () {
         // 已经滚动的高度
         const currentScroll = dom_box.scrollTop
