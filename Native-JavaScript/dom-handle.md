@@ -111,3 +111,15 @@ export function scrollToBottom (dom) {
     scroll()
 }
 ````
+
+###### 页面title滚动
+```js
+ setInterval(function () {
+    // 取 title 中最后一个字符
+    const first_char = document.title[0]
+    // 取除了第一个剩下的
+    const last_string = document.title.substr(1)
+    // 给title重新赋值
+    document.title = last_string + first_char
+ }, 10)
+```
