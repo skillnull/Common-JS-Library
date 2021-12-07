@@ -10,6 +10,12 @@
 	
     - [Base64](/Native-JavaScript/encryption-decryption/base64.md#Base64)	
   </details>
+  
+* <details>
+  	<summary>媒体</summary>
+	
+    - [音频播放](/Native-JavaScript/media.md#音频播放)	
+  </details>  
 	
 * <details>
   	<summary>Form表单验证常用方法</summary>
