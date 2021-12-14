@@ -6,6 +6,12 @@
 
 > 原生JS
 * <details>
+  	<summary>动画</summary>
+	
+    - [Base64](/Native-JavaScript/animations/fall.md#落彩条动画效果)	
+  </details>
+  
+* <details>
   	<summary>加密解密</summary>
 	
     - [Base64](/Native-JavaScript/encryption-decryption/base64.md#Base64)	
