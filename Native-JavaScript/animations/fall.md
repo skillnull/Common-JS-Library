@@ -64,6 +64,11 @@ export default class Animation {
     canvas.width = document.documentElement.clientWidth
     canvas.height = document.documentElement.clientHeight
     canvas.style.cssText = `position: fixed; top: 0px; left: 0px; pointer-events: none; z-index: ${zIndex};`
+
+    setTimeout(() => {
+      document.body.removeChild(canvas)
+    }, 1000)
+
     return canvas
   }
 
