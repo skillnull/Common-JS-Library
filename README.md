@@ -82,6 +82,7 @@
 	
     - [比较两个时间的时间差](/Native-JavaScript/time-handle.md#比较两个时间的时间差)
     - [图表根据时间进行补点](/Native-JavaScript/time-handle.md#图表根据时间进行补点)
+    - [随机生成时间段内的日期](/Native-JavaScript/time-handle.md#随机生成时间段内的日期)
   </details>
 
 * [滚动条处理](/Native-JavaScript/scroll-handle.md#滚动条位置处理)

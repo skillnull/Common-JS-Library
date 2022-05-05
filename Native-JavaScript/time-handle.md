@@ -8,59 +8,59 @@
  * @demo compareTime(new Date('2019-12-24 16:02').getTime(), new Date().getTime())
  */
 function compareTime (startTime, endTime) {
-    var retValue = {}
+  var retValue = {}
 
-    var compareTime = endTime - startTime  // 时间差的毫秒数
+  var compareTime = endTime - startTime  // 时间差的毫秒数
 
-    // 计算出相差天数
-    var days = Math.floor(compareTime / (24 * 3600 * 1000))
-    retValue.Days = days
+  // 计算出相差天数
+  var days = Math.floor(compareTime / (24 * 3600 * 1000))
+  retValue.Days = days
 
-    // 计算出相差年数
-    var years = Math.floor(days / 365)
-    retValue.Years = years
+  // 计算出相差年数
+  var years = Math.floor(days / 365)
+  retValue.Years = years
 
-    // 计算出相差月数
-    var months = Math.floor(days / 30)
-    retValue.Months = months
+  // 计算出相差月数
+  var months = Math.floor(days / 30)
+  retValue.Months = months
 
-    // 计算出小时数
-    var leaveHours = compareTime % (24 * 3600 * 1000) // 计算天数后剩余的毫秒数
-    var hours = Math.floor(leaveHours / (3600 * 1000))
-    retValue.Hours = hours
+  // 计算出小时数
+  var leaveHours = compareTime % (24 * 3600 * 1000) // 计算天数后剩余的毫秒数
+  var hours = Math.floor(leaveHours / (3600 * 1000))
+  retValue.Hours = hours
 
-    // 计算相差分钟数
-    var leaveMinutes = leaveHours % (3600 * 1000) // 计算小时数后剩余的毫秒数
-    var minutes = Math.floor(leaveMinutes / (60 * 1000))
-    retValue.Minutes = minutes
+  // 计算相差分钟数
+  var leaveMinutes = leaveHours % (3600 * 1000) // 计算小时数后剩余的毫秒数
+  var minutes = Math.floor(leaveMinutes / (60 * 1000))
+  retValue.Minutes = minutes
 
-    // 计算相差秒数
-    var leaveSeconds = leaveMinutes % (60 * 1000) // 计算分钟数后剩余的毫秒数
-    var seconds = Math.round(leaveSeconds / 1000)
-    retValue.Seconds = seconds
+  // 计算相差秒数
+  var leaveSeconds = leaveMinutes % (60 * 1000) // 计算分钟数后剩余的毫秒数
+  var seconds = Math.round(leaveSeconds / 1000)
+  retValue.Seconds = seconds
 
-    var resultSeconds = 0
-    if (years >= 1) {
-        resultSeconds = resultSeconds + years * 365 * 24 * 60 * 60
-    }
-    if (months >= 1) {
-        resultSeconds = resultSeconds + months * 30 * 24 * 60 * 60
-    }
-    if (days >= 1) {
-        resultSeconds = resultSeconds + days * 24 * 60 * 60
-    }
-    if (hours >= 1) {
-        resultSeconds = resultSeconds + hours * 60 * 60
-    }
-    if (minutes >= 1) {
-        resultSeconds = resultSeconds + minutes * 60
-    }
-    if (seconds >= 1) {
-        resultSeconds = resultSeconds + seconds
-    }
-    retValue.resultSeconds = resultSeconds
+  var resultSeconds = 0
+  if (years >= 1) {
+    resultSeconds = resultSeconds + years * 365 * 24 * 60 * 60
+  }
+  if (months >= 1) {
+    resultSeconds = resultSeconds + months * 30 * 24 * 60 * 60
+  }
+  if (days >= 1) {
+    resultSeconds = resultSeconds + days * 24 * 60 * 60
+  }
+  if (hours >= 1) {
+    resultSeconds = resultSeconds + hours * 60 * 60
+  }
+  if (minutes >= 1) {
+    resultSeconds = resultSeconds + minutes * 60
+  }
+  if (seconds >= 1) {
+    resultSeconds = resultSeconds + seconds
+  }
+  retValue.resultSeconds = resultSeconds
 
-    return retValue
+  return retValue
 }
 
 ````
@@ -96,22 +96,22 @@ export const handleChartsData = ({ data = [], step = 60, field = '', fill = {}, 
     if (field) {
       const had_time: any = []
       data &&
-        data.length > 0 &&
-        data.map((item: any) => {
-          had_time.push(item[field])
-        })
+      data.length > 0 &&
+      data.map((item: any) => {
+        had_time.push(item[field])
+      })
       time_arr &&
-        time_arr.length > 0 &&
-        time_arr.map((item: any, index: any) => {
-          if (had_time.includes(item)) {
-            result[index] = data.filter((val: any) => {
-              return val[field] === item
-            })[0]
-          } else {
-            fill[field] = item
-            result[index] = { ...fill }
-          }
-        })
+      time_arr.length > 0 &&
+      time_arr.map((item: any, index: any) => {
+        if (had_time.includes(item)) {
+          result[index] = data.filter((val: any) => {
+            return val[field] === item
+          })[0]
+        } else {
+          fill[field] = item
+          result[index] = { ...fill }
+        }
+      })
     } else {
       result = data
     }
@@ -126,4 +126,24 @@ export const handleChartsData = ({ data = [], step = 60, field = '', fill = {}, 
   return toNow ? filter_data : _data
 }
 
+```
+
+###### 随机生成时间段内的日期
+
+```js
+/**
+ * 随机生成时间段内的日期
+ * @startDate: 开始日期
+ * @endDate: 结束日期
+ */
+export const rendomDate = (startDate: any, endDate: any = new Date()) => {
+    let date = new Date(+startDate + Math.random() * (endDate - startDate))
+    let hour = 0 + Math.random() * 23 | 0
+    let minute = 0 + Math.random() * 59 | 0
+    let second = 0 + Math.random() * 59 | 0
+    date.setHours(hour)
+    date.setMinutes(minute)
+    date.setSeconds(second)
+    return date
+  }
 ```
