@@ -49,14 +49,16 @@
   </details>  
   
 * <details>
-  	<summary>数据格式化处理</summary>
+  	<summary>数据处理</summary>
 	
     - [保留小数并千分位格式化](/Native-JavaScript/data-handle.md#保留小数并千分位格式化)
     - [递归遍历数组对象，将结果去重](/Native-JavaScript/data-handle.md#递归遍历数组对象，将结果去重)
     - [数字单位格式化](/Native-JavaScript/data-handle.md#数字单位格式化)
     - [获取对象长度](/Native-JavaScript/data-handle.md#获取对象长度)
     - [HTML实体编码转换](/Native-JavaScript/data-handle.md#HTML实体编码转换)
-    - [数组拉平](/Native-JavaScript/flatten.md#数组拉平)
+    - [数组拉平](/Native-JavaScript/array.md#数组拉平)
+    - [从数组中随机选取指定数量的值](/Native-JavaScript/array.md#从数组中随机选取指定数量的值)
+    - [洗牌算法打乱数组顺序](/Native-JavaScript/array.md#洗牌算法打乱数组顺序)
   </details>
   
 * <details>
