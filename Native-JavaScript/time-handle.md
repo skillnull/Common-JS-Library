@@ -147,3 +147,10 @@ export const rendomDate = (startDate: any, endDate: any = new Date()) => {
     return date
   }
 ```
+
+```js
+/**
+ * 获取当天23:59:59
+ */
+new Date(new Date(new Date().toLocaleDateString()).getTime() + 24 * 60 * 60 * 1000 - 1)
+```
