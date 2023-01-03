@@ -154,3 +154,40 @@ export const rendomDate = (startDate: any, endDate: any = new Date()) => {
  */
 new Date(new Date(new Date().toLocaleDateString()).getTime() + 24 * 60 * 60 * 1000 - 1)
 ```
+
+###### 多长时间以前
+
+```js
+function getTime(time) {
+  const minute = 1000 * 60
+  const hour = minute * 60
+  const day = hour * 24
+  const week = day * 7
+  const month = day * 30
+
+  // 当前时间的时间戳
+  const now_time = new Date().getTime()
+  // 指定时间的时间戳
+  const taget_time = Date.parse(new Date(time))
+
+  const duration = now_time - taget_time
+
+  let result
+  if (duration < 0) {
+    result = '设置的时间，不能为当前时间以后的时间！'
+  } else if (duration / month >= 1) {
+    result = parseInt(duration / month) + '月前'
+  } else if (duration / week >= 1) {
+    result = parseInt(duration / week) + '周前'
+  } else if (duration / day >= 1) {
+    result = parseInt(duration / day) + '天前'
+  } else if (duration / hour >= 1) {
+    result = parseInt(duration / hour) + '小时前'
+  } else if (duration / minute >= 1) {
+    result = parseInt(duration / minute) + '分钟前'
+  } else {
+    result = '刚刚'
+  }
+  return result
+}
+```
