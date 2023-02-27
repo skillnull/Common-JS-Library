@@ -8,7 +8,7 @@
 * <details>
   	<summary>动画</summary>
 	
-    - [Base64](/Native-JavaScript/animations/fall.md#落彩条动画效果)	
+    - [落彩条动画效果](/Native-JavaScript/animations/fall.md#落彩条动画效果)	
   </details>
   
 * <details>
