@@ -86,6 +86,7 @@
     - [图表根据时间进行补点](/Native-JavaScript/time-handle.md#图表根据时间进行补点)
     - [随机生成时间段内的日期](/Native-JavaScript/time-handle.md#随机生成时间段内的日期)
     - [多长时间以前](/Native-JavaScript/time-handle.md#多长时间以前)
+    - [时间段内倒计时](/Native-JavaScript/time-handle.md#时间段内倒计时)
   </details>
 
 * [滚动条处理](/Native-JavaScript/scroll-handle.md#滚动条位置处理)
