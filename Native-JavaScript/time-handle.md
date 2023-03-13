@@ -197,20 +197,32 @@ function getTime(time) {
 ```js
   // 倒计时时间格式转换
   const countDownFormat = (nowTime) => {
-    const time = nowTime
-    const day = Math.floor(time / (60 * 60 * 24))
-    const hour = Math.floor(time / (60 * 60)) - day * 24
-    const minutes = Math.floor((time / 60) - day * 24 * 60 - hour * 60)
-    const seconds = time - day * 24 * 60 * 60 - hour * 60 * 60 - minutes * 60
+   const time = nowTime
+    if (time <= 0) {
+      return {
+        day: 0,
+        hours1: 0,
+        hours2: 0,
+        minutes1: 0,
+        minutes2: 0,
+        seconds1: 0,
+        seconds2: 0
+      }
+    } else {
+      const day = Math.floor(time / (60 * 60 * 24))
+      const hour = Math.floor(time / (60 * 60)) - day * 24
+      const minutes = Math.floor((time / 60) - day * 24 * 60 - hour * 60)
+      const seconds = time - day * 24 * 60 * 60 - hour * 60 * 60 - minutes * 60
 
-    return {
-      day: day,
-      hours1: hour > 9 ? String(hour).slice(0, 1) : 0,
-      hours2: hour > 9 ? String(hour).slice(1) : hour,
-      minutes1: hour > 9 ? String(minutes).slice(0, 1) : 0,
-      minutes2: hour > 9 ? String(minutes).slice(1) : minutes,
-      seconds1: hour > 9 ? String(seconds).slice(1) : 0,
-      seconds2: hour > 9 ? String(seconds).slice(1) : minutes
+      return {
+        day: day,
+        hours1: hour > 9 ? String(hour).slice(0, 1) : 0,
+        hours2: hour > 9 ? String(hour).slice(1) : hour,
+        minutes1: minutes > 9 ? String(minutes).slice(0, 1) : 0,
+        minutes2: minutes > 9 ? String(minutes).slice(1) : minutes,
+        seconds1: seconds > 9 ? String(seconds).slice(1) : 0,
+        seconds2: seconds > 9 ? String(seconds).slice(1) : seconds
+      }
     }
   }
   // 倒计时
