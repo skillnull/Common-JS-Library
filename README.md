@@ -34,6 +34,7 @@
     - [验证密码，密码为6-12位字母数字或符号最少两种组合,特殊符号为 ~!@#$%^&*.,](/Native-JavaScript/form-validator.md#验证密码，密码为6-12位字母数字或符号最少两种组合)	
     - [仅允许输入正整数](/Native-JavaScript/form-validator.md#仅允许输入正整数)	
     - [仅允许输入负整数](/Native-JavaScript/form-validator.md#仅允许输入负整数)	
+    - [校验身份证号](/Native-JavaScript/form-validator.md#校验身份证号)	
   </details>
   
 * <details>
