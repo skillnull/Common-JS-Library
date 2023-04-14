@@ -236,7 +236,7 @@ function getTime(time) {
           Timer = null
         }
         const res = countDownFormat(surplus)
-        console.log(`${res.day}天${res.hour1}${res.hour2}时${res.minutes1}${res.minutes2}分${res.seconds1}${res.seconds2}秒`)
+        console.log(`${res.day}天${res.hours1}${res.hours2}时${res.minutes1}${res.minutes2}分${res.seconds1}${res.seconds2}秒`)
       }, 1000)
     }
   }
