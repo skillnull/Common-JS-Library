@@ -200,13 +200,16 @@ function getTime(time) {
    const time = nowTime
     if (time <= 0) {
       return {
-        day: 0,
-        hours1: 0,
-        hours2: 0,
-        minutes1: 0,
-        minutes2: 0,
-        seconds1: 0,
-        seconds2: 0
+         day: 0,
+         hour: 0,
+         minutes: 0,
+         seconds: 0,
+         hours1: 0,
+         hours2: 0,
+         minutes1: 0,
+         minutes2: 0,
+         seconds1: 0,
+         seconds2: 0
       }
     } else {
       const day = Math.floor(time / (60 * 60 * 24))
@@ -216,6 +219,9 @@ function getTime(time) {
 
       return {
         day: day,
+        hour: hour,
+        minutes: minutes,
+        seconds: seconds,
         hours1: hour > 9 ? String(hour).slice(0, 1) : 0,
         hours2: hour > 9 ? String(hour).slice(1) : hour,
         minutes1: minutes > 9 ? String(minutes).slice(0, 1) : 0,
