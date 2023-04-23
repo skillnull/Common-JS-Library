@@ -235,6 +235,8 @@ function getTime(time) {
   const countDown = (startTime, endTime) => {
     if (endTime > startTime) {
       let surplus = Math.floor((endTime - startTime) / 1000)
+      const res = countDownFormat(surplus)
+      console.log(`${res.day}天${res.hours1}${res.hours2}时${res.minutes1}${res.minutes2}分${res.seconds1}${res.seconds2}秒`)
       let Timer = setInterval(() => {
         --surplus
         if (surplus <= 0) {
