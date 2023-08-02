@@ -78,7 +78,7 @@
     - [监听dom变化](/Native-JavaScript/dom-handle.md#监听dom变化)
     - [滚动到底部](/Native-JavaScript/dom-handle.md#滚动到底部)
     - [页面title滚动](/Native-JavaScript/dom-handle.md#页面title滚动)
-    - [DOM拖拽](/Native-JavaScript/dom-drag.md#DOM拖拽)
+    - [DOM拖拽](/Native-JavaScript/dom-handle.md#DOM拖拽)
   </details>
   
 * <details>
