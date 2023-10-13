@@ -203,16 +203,21 @@ var getAllType = function () {
  * 数字单位格式化
  * @param number
  */
-function formatterNumberUnit (number) {
-    var result = ''
+function formatterNumberUnit (number, type = 'zh') {
+    let result
     if (number >= 100000000) {
-        result = thousandsFormateTofixed(number / 100000000, 2, false) + '亿'
+      const res = this.thousandsFormateTofixed(number / 100000000, 2, false)
+      if (type === 'zh') {
+        result = res + '亿'
+      } else {
+        result = res / 10 + 'B'
+      }
     } else if (100000000 > number && number >= 10000) {
-        result = thousandsFormateTofixed(number / 10000, 2, false) + '万'
+      result = this.thousandsFormateTofixed(number / 10000, 2, false) + `${type === 'zh' ? '万' : 'W'}`
     } else if (10000 > number && number >= 1000) {
-        result = thousandsFormateTofixed(number, 2, false)
+      result = this.thousandsFormateTofixed(number, 0, false)
     } else {
-        result = number
+      result = number
     }
     return result
 }
