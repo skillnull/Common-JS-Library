@@ -7,7 +7,7 @@
  * @param endTime 结束时间
  * @demo compareTime(new Date('2019-12-24 16:02').getTime(), new Date().getTime())
  */
-function compareTime (startTime, endTime) {
+function compareTime(startTime, endTime) {
   var retValue = {}
 
   var compareTime = endTime - startTime  // 时间差的毫秒数
@@ -196,56 +196,100 @@ function getTime(time) {
 
 ```js
   // 倒计时时间格式转换
-  const countDownFormat = (nowTime) => {
-   const time = nowTime
-    if (time <= 0) {
-      return {
-         day: 0,
-         hour: 0,
-         minutes: 0,
-         seconds: 0,
-         hours1: 0,
-         hours2: 0,
-         minutes1: 0,
-         minutes2: 0,
-         seconds1: 0,
-         seconds2: 0
-      }
-    } else {
-      const day = Math.floor(time / (60 * 60 * 24))
-      const hour = Math.floor(time / (60 * 60)) - day * 24
-      const minutes = Math.floor((time / 60) - day * 24 * 60 - hour * 60)
-      const seconds = time - day * 24 * 60 * 60 - hour * 60 * 60 - minutes * 60
+const countDownFormat = (nowTime) => {
+  const time = nowTime
+  if (time <= 0) {
+    return {
+      day: 0,
+      hour: 0,
+      minutes: 0,
+      seconds: 0,
+      hours1: 0,
+      hours2: 0,
+      minutes1: 0,
+      minutes2: 0,
+      seconds1: 0,
+      seconds2: 0
+    }
+  } else {
+    const day = Math.floor(time / (60 * 60 * 24))
+    const hour = Math.floor(time / (60 * 60)) - day * 24
+    const minutes = Math.floor((time / 60) - day * 24 * 60 - hour * 60)
+    const seconds = time - day * 24 * 60 * 60 - hour * 60 * 60 - minutes * 60
 
-      return {
-        day: day,
-        hour: hour,
-        minutes: minutes,
-        seconds: seconds,
-        hours1: hour > 9 ? String(hour).slice(0, 1) : 0,
-        hours2: hour > 9 ? String(hour).slice(1) : hour,
-        minutes1: minutes > 9 ? String(minutes).slice(0, 1) : 0,
-        minutes2: minutes > 9 ? String(minutes).slice(1) : minutes,
-        seconds1: seconds > 9 ? String(seconds).slice(1) : 0,
-        seconds2: seconds > 9 ? String(seconds).slice(1) : seconds
+    return {
+      day: day,
+      hour: hour,
+      minutes: minutes,
+      seconds: seconds,
+      hours1: hour > 9 ? String(hour).slice(0, 1) : 0,
+      hours2: hour > 9 ? String(hour).slice(1) : hour,
+      minutes1: minutes > 9 ? String(minutes).slice(0, 1) : 0,
+      minutes2: minutes > 9 ? String(minutes).slice(1) : minutes,
+      seconds1: seconds > 9 ? String(seconds).slice(1) : 0,
+      seconds2: seconds > 9 ? String(seconds).slice(1) : seconds
+    }
+  }
+}
+// 倒计时
+const countDown = (startTime, endTime) => {
+  if (endTime > startTime) {
+    let surplus = Math.floor((endTime - startTime) / 1000)
+    const res = countDownFormat(surplus)
+    console.log(
+      `${res.day}天${res.hours1}${res.hours2}时${res.minutes1}${res.minutes2}分${res.seconds1}${res.seconds2}秒`)
+    let Timer = setInterval(() => {
+      --surplus
+      if (surplus <= 0) {
+        clearInterval(Timer)
+        Timer = null
+      }
+      const res = countDownFormat(surplus)
+      console.log(
+        `${res.day}天${res.hours1}${res.hours2}时${res.minutes1}${res.minutes2}分${res.seconds1}${res.seconds2}秒`)
+    }, 1000)
+  }
+}
+```
+
+###### 定时器
+
+```js
+const Timer = (function () {
+  function Timer(type) {
+    if (type === void 0) {
+      type = 'timeout'
+    }
+    this.timer = null
+    this.type = type
+  }
+
+  // 每次添加都清除历史定时器，防止内存溢出
+  Timer.prototype.add = function (func, time) {
+    if (time === void 0) {
+      time = 0
+    }
+
+    this.clear()
+
+    if (this.type === 'timeout') {
+      this.timer = setTimeout(func, time)
+    } else {
+      this.timer = setInterval(func, time)
+    }
+  }
+
+  Timer.prototype.clear = function () {
+    if (this.timer) {
+      if (this.type === 'timeout') {
+        clearTimeout(this.timer)
+      } else {
+        clearInterval(this.timer)
       }
     }
+    this.timer = null
   }
-  // 倒计时
-  const countDown = (startTime, endTime) => {
-    if (endTime > startTime) {
-      let surplus = Math.floor((endTime - startTime) / 1000)
-      const res = countDownFormat(surplus)
-      console.log(`${res.day}天${res.hours1}${res.hours2}时${res.minutes1}${res.minutes2}分${res.seconds1}${res.seconds2}秒`)
-      let Timer = setInterval(() => {
-        --surplus
-        if (surplus <= 0) {
-          clearInterval(Timer)
-          Timer = null
-        }
-        const res = countDownFormat(surplus)
-        console.log(`${res.day}天${res.hours1}${res.hours2}时${res.minutes1}${res.minutes2}分${res.seconds1}${res.seconds2}秒`)
-      }, 1000)
-    }
-  }
+
+  return Timer
+}())
 ```
