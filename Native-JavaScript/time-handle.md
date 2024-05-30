@@ -292,4 +292,10 @@ const Timer = (function () {
 
   return Timer
 }())
+
+// 调用示例
+let heartbeat = new Timer('interval')
+heartbeat.add(() => {
+  // do something
+}, 3000)
 ```
