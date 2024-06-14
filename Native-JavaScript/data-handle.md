@@ -201,7 +201,8 @@ var getAllType = function () {
 ````js
 /**
  * 数字单位格式化
- * @param number
+ * @_number: 需要格式化的数字
+ * @type?: 单位语言类型，支持中英文
  */
 function formatterNumberUnit (_number, type = 'zh') {
     let number = Math.abs(_number)
