@@ -203,7 +203,8 @@ var getAllType = function () {
  * 数字单位格式化
  * @param number
  */
-function formatterNumberUnit (number, type = 'zh') {
+function formatterNumberUnit (_number, type = 'zh') {
+    let number = Math.abs(_number)
     let result
     if (number >= 100000000) {
       const res = this.thousandsFormateTofixed(number / 100000000, 2, false)
@@ -219,7 +220,7 @@ function formatterNumberUnit (number, type = 'zh') {
     } else {
       result = number
     }
-    return result
+    return _number > 0 ? result : '-' + result
 }
 ````
 
