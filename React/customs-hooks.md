@@ -1,7 +1,7 @@
 ###### 获取useState最新值
 ```ts
 // util.ts
-export const useRefState = (init: any) => {
+export const useRefState = (init: any = null) => {
   const [state, setState] = useState(init);
   const stateRef = useRef(init);
   const setProxy = (newVal: any) => {
