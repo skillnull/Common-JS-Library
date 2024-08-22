@@ -79,7 +79,7 @@
     - [监听dom变化](/Native-JavaScript/dom-handle.md#监听dom变化)
     - [滚动到底部](/Native-JavaScript/dom-handle.md#滚动到底部)
     - [页面title滚动](/Native-JavaScript/dom-handle.md#页面title滚动)
-
+    - [阻止滚动穿透](/Native-JavaScript/dom-handle.md#阻止滚动穿透)
   </details>
 
 * <details>
