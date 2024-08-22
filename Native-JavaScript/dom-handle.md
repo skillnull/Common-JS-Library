@@ -124,3 +124,37 @@ export function scrollToBottom (dom) {
  }, 10)
 ```
 
+###### 阻止滚动穿透
+```js
+	const maskPageStartY = ref(0);
+ 	// 阻止滚动穿透
+	const preventThrough = (dom) => {
+		const _dom: any = document.querySelector(dom);
+		_dom?.addEventListener(
+			"touchstart",
+			(e: any) => {
+				maskPageStartY.value = e?.changedTouches?.[0]?.pageY;
+			},
+			false
+		);
+
+		_dom?.addEventListener(
+			"touchmove",
+			(e: any) => {
+				e?.stopPropagation();
+				const moveY = e?.changedTouches?.[0]?.pageY - maskPageStartY.value;
+				// 禁止向上滚动溢出
+				if (e.cancelable && moveY > 0 && (_dom?.scrollTop || 0) <= 0) {
+					e.preventDefault();
+				}
+
+				// 禁止向下滚动溢出
+				if (e.cancelable && moveY < 0 && _dom?.scrollTop + _dom?.clientHeight >= _dom?.scrollHeight) {
+					e.preventDefault();
+				}
+			},
+			false
+		);
+	};
+```
+
