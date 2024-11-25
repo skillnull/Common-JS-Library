@@ -19,3 +19,11 @@
   }
 }(window, document)
 ```
+
+```javascript
+// 根据设计稿尺寸计算大小，例如用在echarts里，自适应字体大小
+export const rem = (fontSize: number, width: any = null) => {
+	const _width = width || document.documentElement.clientWidth;
+	return (_width / 375) * fontSize;
+};
+```
