@@ -260,3 +260,18 @@ new Watermark().init({
 })
 
 ```
+
+###### 点击元素外部
+```typescript
+/*
+ * 点击除 el 和 trigger_el 外的元素，执行 callback
+ */
+export const clickOutside = (el: any, trigger_el: any, calback: any) => {
+	document.addEventListener("click", (e) => {
+		if (!el?.contains(e.target) && !trigger_el?.contains(e.target)) {
+			calback();
+		}
+	});
+};
+
+```
