@@ -272,6 +272,11 @@ export const clickOutside = (el: any, trigger_el: any, calback: any) => {
 			calback();
 		}
 	});
+	document.addEventListener("touchmove", (e) => {
+		if (!el?.contains(e.target) && !trigger_el?.contains(e.target)) {
+			calback();
+		}
+	});
 };
 
 ```
