@@ -81,6 +81,7 @@
     - [页面title滚动](/Native-JavaScript/dom-handle.md#页面title滚动)
     - [阻止滚动穿透](/Native-JavaScript/dom-handle.md#阻止滚动穿透)
     - [水印](/Native-JavaScript/dom-handle.md#水印)
+    - [点击元素外部](/Native-JavaScript/dom-handle.md#点击元素外部)
   </details>
 
 * <details>
