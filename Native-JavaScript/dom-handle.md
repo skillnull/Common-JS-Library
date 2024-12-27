@@ -264,19 +264,42 @@ new Watermark().init({
 ###### 点击元素外部
 ```typescript
 /*
- * 点击除 el 和 trigger_el 外的元素，执行 callback
+ * 点击除排除元素列表和目标元素外的元素，执行回调
+ * @els: 排除元素列表，点击不执行回调
+ * @target: 目标元素，点击不执行回调
+ *
+ * 例：
+ *  const els = document.querySelectorAll(".pop-click");
+ *  const content = document.querySelector("#pop_content");
+ *  clickOutside(Array.from(els), content, ()=>{ // do somthing });
  */
-export const clickOutside = (el: any, trigger_el: any, calback: any) => {
+export const clickOutside = (els: any, target: any, calback: any) => {
 	document.addEventListener("click", (e) => {
-		if (!el?.contains(e.target) && !trigger_el?.contains(e.target)) {
+		let flag = false;
+		els.map((item: any) => {
+			if (item.contains(e.target)) {
+				flag = true;
+			}
+		});
+
+		if (!flag && !target.contains(e.target)) {
 			calback();
 		}
 	});
 	document.addEventListener("touchmove", (e) => {
-		if (!el?.contains(e.target) && !trigger_el?.contains(e.target)) {
+		let flag = false;
+		els.map((item: any) => {
+			if (item.contains(e.target)) {
+				flag = true;
+			}
+		});
+
+		if (!flag && !target.contains(e.target)) {
 			calback();
 		}
 	});
 };
+
+
 
 ```
