@@ -269,37 +269,24 @@ new Watermark().init({
  * @target: 目标元素，点击不执行回调
  *
  * 例：
- *  const els = document.querySelectorAll(".pop-click");
- *  const content = document.querySelector("#pop_content");
- *  clickOutside(Array.from(els), content, ()=>{ // do somthing });
+ *	clickOutside(".pop-click", "#pop_content", ()=>{ // do somthing });
  */
-export const clickOutside = (els: any, target: any, calback: any) => {
-	document.addEventListener("click", (e) => {
+export const clickOutside = (els: any = "", target: any = "", calback: any = null) => {
+	const handler = (e: Event) => {
+		const target_dom: any = document.querySelector(target);
+		const els_dom: any = document.querySelectorAll(els);
 		let flag = false;
-		els.map((item: any) => {
-			if (item.contains(e.target)) {
+		Array.from(els_dom)?.map((item: any) => {
+			if (item?.contains(e.target)) {
 				flag = true;
 			}
 		});
-
-		if (!flag && !target.contains(e.target)) {
+		if (!flag && !target_dom?.contains(e.target)) {
 			calback();
 		}
-	});
-	document.addEventListener("touchmove", (e) => {
-		let flag = false;
-		els.map((item: any) => {
-			if (item.contains(e.target)) {
-				flag = true;
-			}
-		});
+	};
 
-		if (!flag && !target.contains(e.target)) {
-			calback();
-		}
-	});
+	document.addEventListener("click", (e) => handler(e));
+	document.addEventListener("touchmove", (e) => handler(e));
 };
-
-
-
 ```
