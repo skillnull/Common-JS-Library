@@ -290,3 +290,137 @@ export const clickOutside = (els: any = "", target: any = "", calback: any = nul
 	document.addEventListener("touchmove", (e) => handler(e));
 };
 ```
+
+###### 禁止橡皮筋效果
+
+> util.ts
+```ts
+export const getClientHeight = () => {
+	return (
+		window.innerHeight ||
+		document.documentElement.clientHeight ||
+		document.body.clientHeight
+	);
+};
+
+/*
+ * @Function 处理touchmove, 将滚动条拖到边缘的时候，禁止橡皮筋效果
+ */
+class HandleTouchMove {
+	startX;
+	startY;
+
+	constructor() {
+		this.startX = 0;
+		this.startY = 0;
+		this.listenTouchstart = this.listenTouchstart.bind(this);
+		this.listenTouchmove = this.listenTouchmove.bind(this);
+	}
+
+	listenTouchstart = (ev: any) => {
+		this.startX = ev.changedTouches[0].pageX;
+		this.startY = ev.changedTouches[0].pageY;
+	};
+
+	listenTouchmove = (ev: any, _dom: any) => {
+		const dom = document.querySelector(_dom);
+		const moveEndX = ev.changedTouches[0].pageX;
+		const moveEndY = ev.changedTouches[0].pageY;
+		const moveX = moveEndX - this.startX;
+		const moveY = moveEndY - this.startY;
+		if (Math.abs(moveX) > Math.abs(moveY) && moveX > 0) {
+			// 向右拖拽
+			if (dom?.scrollLeft === 0) {
+				ev.cancelable && ev.preventDefault();
+			}
+		}
+		if (Math.abs(moveX) > Math.abs(moveY) && moveX < 0) {
+			// 向左拖拽
+			if (
+				dom?.scrollLeft + dom?.offsetWidth === dom?.scrollWidth &&
+				dom?.scrollLeft + dom?.clientWidth === dom?.scrollWidth
+			) {
+				ev.cancelable && ev.preventDefault();
+			}
+		}
+		if (Math.abs(moveY) > Math.abs(moveX) && moveY > 0) {
+			// 向下拖拽
+			if (dom?.scrollTop === 0) {
+				ev.cancelable && ev.preventDefault();
+			}
+		}
+		if (Math.abs(moveY) > Math.abs(moveX) && moveY < 0) {
+			// 向上拖拽
+			if (
+				dom?.scrollTop + dom?.offsetHeight === dom?.scrollHeight &&
+				dom?.scrollTop + dom?.clientHeight === dom?.scrollHeight
+			) {
+				ev.cancelable && ev.preventDefault();
+			}
+		}
+	};
+}
+
+export const handleTouchmove = new HandleTouchMove();
+```
+
+> demo.vue
+
+```vue
+<template>
+	<div class="wrap" :style="{ height: client_height }">
+		<div
+			class="content"
+			@touchstart="handleTouchmove.listenTouchstart"
+			@touchmove="
+				(ev) => handleTouchmove.listenTouchmove(ev, '.content')
+			">
+			<div style="height: 1000px">132</div>
+		</div>
+	</div>
+</template>
+
+<script lang="ts" setup>
+	import { getClientHeight, handleTouchmove } from "./utils";
+	import { onMounted, ref } from "vue";
+
+	const client_height: any = ref("100vh");
+
+	onMounted(() => {
+		client_height.value = getClientHeight() + "px";
+	});
+</script>
+
+<style lang="scss" scoped>
+	.wrap {
+		width: 100%;
+
+		.content {
+			height: 100%;
+			overflow-y: auto;
+			overscroll-behavior: none;
+		}
+	}
+
+	@supports (padding-bottom: env(safe-area-inset-bottom)) or
+		(padding-bottom: constant(safe-area-inset-bottom)) {
+		.content {
+			padding-bottom: constant(safe-area-inset-bottom); /* 兼容 iOS < 11.2 */
+			padding-bottom: env(safe-area-inset-bottom); /* 兼容 iOS >= 11.2 */
+		}
+	}
+
+	@supports not (padding-bottom: env(safe-area-inset-bottom)) {
+		.content {
+			padding-bottom: 20px;
+		}
+	}
+
+	@supports not (padding-bottom: constant(safe-area-inset-bottom)) {
+		.content {
+			padding-bottom: 20px;
+		}
+	}
+</style>
+
+```

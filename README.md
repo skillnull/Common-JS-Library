@@ -82,6 +82,7 @@
     - [阻止滚动穿透](/Native-JavaScript/dom-handle.md#阻止滚动穿透)
     - [水印](/Native-JavaScript/dom-handle.md#水印)
     - [点击元素外部](/Native-JavaScript/dom-handle.md#点击元素外部)
+    - [禁止橡皮筋效果](/Native-JavaScript/dom-handle.md#禁止橡皮筋效果)
   </details>
 
 * <details>
